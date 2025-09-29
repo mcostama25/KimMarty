@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  background: #ece4d9; /* color cru */
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Contenidor de la sidebar */
+.sidebar-container {
+  position: relative;
+}
+
+.hamburger {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 1100;
+}
+
+.hamburger .line {
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .line1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.open .line2 {
+  opacity: 0;
+}
+
+.hamburger.open .line3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Sidebar ocult per defecte */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100px; /* fora de la pantalla */
+  width: 100px;
+  height: 100vh; /* tota l'alçada */
+  background-color: #d9cab3; /* color barra lateral */
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+/* .sidebar {
+  width: 60px;
+  background: #d9cab3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+} */
+
+/* Sidebar visible */
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333; /* color text menú */
+  padding: 8px 0;
+  font-family: 'Merriweather', serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #000;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 25px;
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background: #d9cab3; /* color cru */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.artist-img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0%;
+  margin-right: 15px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.artwork-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  background: white;
+  transition: transform 0.2s;
+}
+
+.artwork-card:hover {
+  transform: scale(1.05);
+}
+
+.artwork-card img {
+  width: 100%;
+  height: auto;
+}
+
+.artwork-detail-img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.page {
+  padding: 10px;
+}
